@@ -8,7 +8,6 @@ uniform vec3 Albedo: source_color = vec3(1, 1, 1);
 uniform float Roughness : hint_range(0.0, 1.0) = 1.0;
 uniform float Metallicness : hint_range(0.0, 1.0) = 0.0;
 uniform float normal_map ;
-// the aputad must be lower then the wave length to make it look good
 
 void fragment() {
 	ALBEDO = Albedo;
@@ -40,8 +39,3 @@ void light() {
 	DIFFUSE_LIGHT += dot(half_normal, half_light) * ATTENUATION * LIGHT_COLOR / PI;
 }
 
-//wave_used_arr[i] = (2.0) /wave_length_arr[i];
-		//phase_arr[i] = speed_arr[i] * wave_used_arr[i];
-		//DIFFUSE_LIGHT += clamp(dot(NORMAL, LIGHT), 0.0, 1.0) * ATTENUATION * LIGHT_COLOR / PI;
-		//VERTEX.y += Brown_ab_u[i] * pow(E,sin(_dir_2 * wave_used_arr[i] + TIME * phase_arr[i]));
-		//VERTEX.y += ap_arr[i] * pow(E,sin(_dir_2 * wave_used_arr[i] + TIME * phase_arr[i]));
